@@ -27,29 +27,9 @@ version [0.1.0]
 timezone [UTC]
     Used in the common settings file for the `TIME_ZONE` value.
 
-use_whitenoise [y]
-    Whether to use WhiteNoise_ for static file serving.
-
-use_celery [n]
-    Whether to use Celery_. This gives you the ability to use distributed task
-    queues in your project.
-
-use_mailhog [n]
-    Whether to use MailHog_. MailHog is a tool that simulates email receiving
-    for development purposes. It runs a simple SMTP server which catches
-    any message sent to it. Messages are displayed in a web interface which runs at ``http://localhost:8025/`` You need to download the MailHog executable for your operating system, see the 'Developing Locally' docs for instructions.
-
-use_sentry [n]
-    Whether to use Sentry_ to log errors from your project.
-
 windows [n]
     Whether you'll be developing on Windows.
 
 use_python2 [n]
     By default, the Python code generated will be for Python 3.x. But if you
     answer `y` here, it will be legacy Python 2.7 code.
-
-.. _WhiteNoise: https://github.com/evansd/whitenoise
-.. _Celery: https://github.com/celery/celery
-.. _MailHog: https://github.com/mailhog/MailHog
-.. _Sentry: https://github.com/getsentry/sentry

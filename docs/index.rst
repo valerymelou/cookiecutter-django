@@ -1,13 +1,14 @@
-.. cookiecutter-django documentation master file.
+.. cookiecutter-django-gulp documentation master file, created by
+   sphinx-quickstart on Thu Mar 10 19:13:44 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-Welcome to cookiecutter-django's documentation!
-====================================================================
+Welcome to cookiecutter-django-gulp's documentation!
+====================================================
 
 A Cookiecutter_ template for Django.
 
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
-
-.. note:: This is an in-progress documentation reorganization. Locations of files may change dramatically over the course of the next few days. See https://github.com/pydanny/cookiecutter-django/issues/335
 
 Contents:
 
@@ -17,19 +18,13 @@ Contents:
 
    project-generation-options
    developing-locally
-   developing-locally-docker
    settings
-   linters
-   live-reloading-and-sass-compilation
-   deployment-on-heroku
-   deployment-with-docker
    faq
+
+
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
 * :ref:`search`
-
-.. At some point it would be good to have a module index of the high level things
-we are doing. Then we can * :ref:`modindex` back in.

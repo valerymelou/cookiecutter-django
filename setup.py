@@ -22,15 +22,15 @@ with open('README.rst') as readme_file:
     long_description = readme_file.read()
 
 setup(
-    name='cookiecutter-django',
+    name='cookiecutter-django-gulp',
     version=version,
-    description='A Cookiecutter template for creating production-ready Django projects quickly.',
+    description='A Cookiecutter template for integrating frontend development tools in Django projects.',
     long_description=long_description,
-    author='Daniel Roy Greenfeld',
-    author_email='pydanny@gmail.com',
-    url='https://github.com/pydanny/cookiecutter-django',
+    author='Valery Melou',
+    author_email='valerymelou@gmail.com',
+    url='https://github.com/valerymelou/cookiecutter-django-gulp',
     packages=[],
-    license='BSD',
+    license='MIT',
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -38,7 +38,7 @@ setup(
         'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
         'Natural Language :: English',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
@@ -51,6 +51,7 @@ setup(
     ],
     keywords=(
         'cookiecutter, Python, projects, project templates, django, '
-        'skeleton, scaffolding, project directory, setup.py'
+        'frontend, gulp, optimization, compass, sass, minification, skeleton, '
+        'scaffolding, project directory, setup.py'
     ),
 )
