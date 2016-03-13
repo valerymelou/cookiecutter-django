@@ -57,3 +57,4 @@ node_modules/
 
 # User-uploaded media
 {{ cookiecutter.repo_name }}/media/
+{{ cookiecutter.repo_name }}/dist/

@@ -42,4 +42,31 @@ To send email you need to `configure your email backend`_
 
 In development emails are printed to the console.
 
+**Integrate Gulp to your project**
+
+If you'd like to take advantage of common frontend development tools, you can do so with the included Gulpfile.
+
+Make sure that nodejs_ is installed. Then in the project root run::
+
+    $ npm install
+
+Now you just need::
+
+    $ gulp
+
+The base app will now run as it would with the usual ``manage.py runserver`` but with:
+
+* Live reloading
+* Sass compilation, CSS concatenation and compression
+* JavaScript validation, concatenation and compression
+* Images optimization
+
+all enabled.
+
+.. _nodejs: http://nodejs.org/download/
+
+Optimized files are saved in the dist folder of the generated project which is included in your Django STATICFILES_DIRS.
+
+To read about all included gulp tasks see :ref:`gulp-tasks`.
+
 It's time to write the code!!!

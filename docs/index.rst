@@ -19,6 +19,7 @@ Contents:
    project-generation-options
    developing-locally
    settings
+   gulp-tasks
    faq
 
 
