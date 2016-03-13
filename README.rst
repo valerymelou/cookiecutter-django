@@ -21,11 +21,13 @@ Features
 * Renders Django projects with 100% starting test coverage
 * 12-Factor_ based settings via django-environ_
 * Optimized development and production settings
+* Sass compilation plus CSS, JavaScript and image optimization with Gulp_
 * Works with Python 2.7.x or 3.5.x!
 * Run tests with unittest or py.test!
 
 .. _12-Factor: http://12factor.net/
 .. _django-environ: https://github.com/joke2k/django-environ
+.. _Gulp: http://gulpjs.com/
 
 
 Constraints
