@@ -11,7 +11,7 @@ var exec = require('child_process').exec;
 var notifier = require('node-notifier');
 
 // Configuration used within this gulpfile
-var app = 'helloworld';
+var app = '{{ cookiecutter.repo_name }}';
 var dist = app + '/dist';
 var config = {
     css: app + '/static/css/**/*.css',
