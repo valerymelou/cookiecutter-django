@@ -14,6 +14,7 @@
     <![endif]-->
 
     {% block css %}
+      <link href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}">
       <link href="{% static 'css/styles.min.css' %}" rel="stylesheet">
     {% endblock %}
 
@@ -26,6 +27,9 @@
     {% endblock content %}
 
     {% block javascript %}
+    <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/tether/dist/js/tether.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
       <script src="{% static 'js/scripts.min.js' %}"></script>
     {% endblock javascript %}
   </body>

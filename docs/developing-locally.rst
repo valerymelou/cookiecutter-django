@@ -50,7 +50,7 @@ Make sure that nodejs_ is installed. Then in the project root run::
 
     $ npm install
 
-Now you just need::
+This command will also run `bower install` to install static dependencies for you. Now you just need::
 
     $ gulp
 

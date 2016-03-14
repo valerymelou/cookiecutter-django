@@ -19,12 +19,16 @@ Features
 
 * For Django 1.9
 * Renders Django projects with 100% starting test coverage
+* Twitter Bootstrap_ v4.0.0 - alpha_
 * 12-Factor_ based settings via django-environ_
 * Optimized development and production settings
 * Sass compilation plus CSS, JavaScript and image optimization with Gulp_
+* Dependencies management with Bower_
 * Works with Python 2.7.x or 3.5.x!
 * Run tests with unittest or py.test!
 
+.. _Bootstrap: https://github.com/twbs/bootstrap
+.. _alpha: http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/
 .. _12-Factor: http://12factor.net/
 .. _django-environ: https://github.com/joke2k/django-environ
 .. _Gulp: http://gulpjs.com/
