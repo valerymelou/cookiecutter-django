@@ -12,15 +12,14 @@ var notifier = require('node-notifier');
 
 // Configuration used within this gulpfile
 var app = '{{ cookiecutter.repo_name }}';
-var dist = app + '/dist';
+var dist = 'build';
 var config = {
     css: app + '/static/css/**/*.css',
     scss: app + '/static/scss/**/*.scss',
     js: app + '/static/js/**/*.js',
-    fonts: app + '/static/fonts/**/*',
     images: app + '/static/images/**/*',
-    html: app + '/templates/**/*.html',
-}
+    html: app + '/templates/**/*.html'
+};
 
 // Autoprefixers
 var AUTOPREFIXER_BROWSERS = [
@@ -109,14 +108,6 @@ gulp.task('images', function() {
 });
 
 
-// Copy web fonts to dist
-gulp.task('fonts', function() {
-    return gulp.src(config.fonts)
-        .pipe(gulp.dest(dist + '/fonts'))
-        .pipe($.size({title: 'fonts'}));
-});
-
-
 // Clear the cache
 gulp.task('clear-cache', function() {
     // Clear all cached files
@@ -129,13 +120,12 @@ gulp.task('clean', del.bind(null, [
     dist + '/css',
     dist + '/js',
     dist + '/images',
-    dist + '/fonts'
 ]));
 
 
 // Optimize files and save the output to the dist folder
 gulp.task('dist', ['clean'], function(cb) {
-    runSequence('styles', ['jshint', 'scripts', 'images', 'fonts'], cb);
+    runSequence('styles', ['jshint', 'scripts', 'images'], cb);
 });
 
 
@@ -152,7 +142,7 @@ gulp.task('default', ['dist', 'runserver'], function() {
         proxy: 'localhost:8000'
     });
     gulp.watch([config.html], reload);
-    gulp.watch([config.scss], ['styles', reload]);
+    gulp.watch([config.css, config.scss], ['styles', reload]);
     gulp.watch([config.js], ['scripts', reload]);
     gulp.watch([config.images], ['images', reload]);
 });

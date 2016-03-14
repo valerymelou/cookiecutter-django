@@ -30,6 +30,7 @@ pip-log.txt
 # Unit test / coverage reports
 .coverage
 .tox
+.cache
 nosetests.xml
 htmlcov
 
@@ -55,6 +56,10 @@ node_modules/
 # virtual environments
 .env
 
+# Static files
+{{ cookiecutter.repo_name }}/static/libs/
+staticfiles/
+build/
+
 # User-uploaded media
 {{ cookiecutter.repo_name }}/media/
-{{ cookiecutter.repo_name }}/dist/

@@ -21,9 +21,6 @@ The following gulp tasks are available from the default gulpfile:
 
     $ gulp images
 
-**Copy web fonts to the dist folder**::
-
-    $ gulp fonts
 
 **Clean the dist folder**::
 
