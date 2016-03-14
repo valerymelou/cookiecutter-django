@@ -32,6 +32,7 @@ Features
 .. _12-Factor: http://12factor.net/
 .. _django-environ: https://github.com/joke2k/django-environ
 .. _Gulp: http://gulpjs.com/
+.. _Bower: http://bower.io/
 
 
 Constraints
