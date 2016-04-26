@@ -57,9 +57,9 @@ node_modules/
 .env
 
 # Static files
-{{ cookiecutter.repo_name }}/static/libs/
+{{ cookiecutter.project_slug }}/static/libs/
 staticfiles/
 build/
 
 # User-uploaded media
-{{ cookiecutter.repo_name }}/media/
+{{ cookiecutter.project_slug }}/media/

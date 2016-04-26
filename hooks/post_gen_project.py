@@ -92,7 +92,7 @@ def remove_task_app(project_directory):
     # Determine the local_setting_file_location
     task_app_location = os.path.join(
         PROJECT_DIRECTORY,
-        '{{ cookiecutter.repo_name }}/taskapp'
+        '{{ cookiecutter.project_slug }}/taskapp'
     )
     shutil.rmtree(task_app_location)
 

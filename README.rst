@@ -62,7 +62,7 @@ You'll be prompted for some questions, answer them, then it will create a Django
 
 **Warning**: After this point, change 'Valery Melou', 'valerymelou', etc to your own information.
 
-**Warning**: repo_name must be a valid Python module name or you will have issues on imports.
+**Warning**: project_slug must be a valid Python module name or you will have issues on imports.
 
 It prompts you for questions. Answer them::
 
@@ -73,7 +73,7 @@ It prompts you for questions. Answer them::
     Receiving objects: 100% (550/550), 127.66 KiB | 58 KiB/s, done.
     Resolving deltas: 100% (283/283), done.
     project_name [project_name]: Reddit Clone
-    repo_name [Reddit_Clone]: reddit
+    project_slug [Reddit_Clone]: reddit
     author_name [Your Name]: Valery Melou
     email [Your email]: valerymelou@gmail.com
     description [A short description of the project.]: A reddit clone.

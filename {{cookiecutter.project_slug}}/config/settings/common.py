@@ -14,7 +14,7 @@ import environ
 
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('{{ cookiecutter.repo_name }}')
+APPS_DIR = ROOT_DIR.path('{{ cookiecutter.project_slug }}')
 
 env = environ.Env()
 
@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': '{{ cookiecutter.repo_name }}.contrib.sites.migrations'
+    'sites': '{{ cookiecutter.project_slug }}.contrib.sites.migrations'
 }
 
 
@@ -102,7 +102,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres://{% if cookiecutter.windows == 'y' %}localhost{% endif %}/{{cookiecutter.repo_name}}"),
+    'default': env.db("DATABASE_URL", default="postgres://{% if cookiecutter.windows == 'y' %}localhost{% endif %}/{{ cookiecutter.project_slug }}"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

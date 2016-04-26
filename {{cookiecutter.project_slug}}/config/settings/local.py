@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Local settings for {{cookiecutter.project_name}} project.
+Local settings for {{ cookiecutter.project_name }} project.
 
 - Run in Debug mode
 - Use console backend for emails
