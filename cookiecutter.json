@@ -11,5 +11,6 @@
     "year": "{{ cookiecutter.now[:4] }}",
     "windows": "n",
     "use_python2": "n",
+    "use_gulp": "n",
     "open_source_license": ["MIT", "BSD", "Not open source"]
 }

@@ -2,6 +2,7 @@
 Does the following:
 
 1. Generates and saves random secret key
+2. Removes unused files
 
 A portion of this code was adopted from Django's standard crypto functions and
 utilities, specifically:
@@ -87,15 +88,18 @@ def make_secret_key(project_directory):
     set_secret_key(env_file)
 
 
-def remove_task_app(project_directory):
-    """Removes the taskapp if celery isn't going to be used"""
-    # Determine the local_setting_file_location
-    task_app_location = os.path.join(
-        PROJECT_DIRECTORY,
-        '{{ cookiecutter.project_slug }}/taskapp'
-    )
-    shutil.rmtree(task_app_location)
-
-
 # 1. Generates and saves random secret key
 make_secret_key(PROJECT_DIRECTORY)
+
+def remove_gulp_files():
+    """
+    Removes files needed for gulp if it isn't going to be used.
+    """
+    for filename in ['gulpfile.js', 'package.json']:
+        os.remove(os.path.join(
+            PROJECT_DIRECTORY, filename
+        ))
+
+# 2. Removes all gulp files if it isn't going to be used
+if '{{ cookiecutter.use_gulp }}'.lower() != 'y':
+    remove_gulp_files()

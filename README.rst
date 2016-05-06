@@ -84,6 +84,7 @@ It prompts you for questions. Answer them::
     year [2015]:
     windows [n]: n
     use_python2 [n]: y
+    use_gulp [n]: n
     Select open_source_license:
     1 - MIT
     2 - BSD

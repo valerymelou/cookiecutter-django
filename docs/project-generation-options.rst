@@ -33,3 +33,6 @@ windows [n]
 use_python2 [n]
     By default, the Python code generated will be for Python 3.x. But if you
     answer `y` here, it will be legacy Python 2.7 code.
+
+use_gulp [n]
+    Wheter you'll use gulp as your frontend task manager.
