@@ -3,7 +3,7 @@
 
 coverage==4.0.3
 Sphinx
-django-extensions==1.6.1
+django-extensions==1.6.6
 django-test-plus==1.0.12
 factory_boy==2.7.0
 
