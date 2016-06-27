@@ -110,7 +110,7 @@ For development, see the following for local development:
 
 * `Developing locally`_
 
-.. _`Developing locally`: http://cookiecutter-django-gulp.readthedocs.org/en/latest/developing-locally.html
+.. _`Developing locally`: http://cookiecutter-django-gulp.readthedocs.io/en/latest/developing-locally.html
 
 
 "Your Stuff"
