@@ -1,9 +1,9 @@
 cookiecutter-django-gulp
 ========================
 
-.. image:: https://requires.io/github/valerymelou/cookiecutter-django-gulp/requirements.svg?branch=master
-     :target: https://requires.io/github/valerymelou/cookiecutter-django-gulp/requirements/?branch=master
-     :alt: Requirements Status
+.. image:: https://pyup.io/repos/github/valerymelou/cookiecutter-django-gulp/shield.svg
+     :target: https://pyup.io/repos/github/valerymelou/cookiecutter-django-gulp/
+     :alt: Updates
 
 .. image:: https://travis-ci.org/valerymelou/cookiecutter-django-gulp.svg?branch=master
      :target: https://travis-ci.org/valerymelou/cookiecutter-django-gulp
