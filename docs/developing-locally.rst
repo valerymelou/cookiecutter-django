@@ -21,7 +21,7 @@ Then, create a PostgreSQL database with the following command, where `[project_s
 
     $ createdb [project_slug]
 
-`cookiecutter-django-gulp` uses the excellent `django-environ`_ package with its ``DATABASE_URL`` environment variable to simplify database configuration in your Django settings. Now all you have to do is compose a definition for ``DATABASE_URL``:
+`Cookiecutter Django Gulp` uses the excellent `django-environ`_ package with its ``DATABASE_URL`` environment variable to simplify database configuration in your Django settings. Now all you have to do is compose a definition for ``DATABASE_URL``:
 
 .. parsed-literal::
 

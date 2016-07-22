@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'cookiecutter-django-gulp'
+project = 'Cookiecutter Django Gulp'
 copyright = '2016, Valery Melou'
 author = 'Valery Melou'
 
@@ -108,7 +108,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -252,7 +252,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'cookiecutter-django-gulp', 'cookiecutter-django-gulp Documentation',
+    ('index', 'Cookiecutter Django Gulp', 'Cookiecutter Django Gulp Documentation',
      [author], 1)
 ]
 
@@ -266,9 +266,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'cookiecutter-django-gulp', 'cookiecutter-django-gulp Documentation',
-     author, 'cookiecutter-django-gulp', 'One line description of project.',
-     'Miscellaneous'),
+    ('index', 'Cookiecutter Django Gulp', 'Cookiecutter Django Gulp Documentation',
+     author, 'Valery Melou', 'Cookiecutter Django Gulp',
+     'A Cookiecutter template for integrating Gulp in Django projects.'),
 ]
 
 # Documents to append as an appendix to all manuals.
