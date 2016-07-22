@@ -1,4 +1,4 @@
-cookiecutter-django-gulp
+Cookiecutter Django Gulp
 ========================
 
 .. image:: https://pyup.io/repos/github/valerymelou/cookiecutter-django-gulp/shield.svg
