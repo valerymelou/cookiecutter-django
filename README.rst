@@ -13,6 +13,9 @@ Powered by Cookiecutter_, Cookiecutter Django Gulp is a framework for integratin
 
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
 
+**Warning**: if you get the error "jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'now'." , please upgrade your cookiecutter version to >= 1.4 (see issue # 528_ )
+
+.. _528: https://github.com/pydanny/cookiecutter-django/issues/528#issuecomment-212650373
 
 Features
 --------
