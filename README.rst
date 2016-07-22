@@ -79,8 +79,6 @@ It prompts you for questions. Answer them::
     domain_name [example.com]: myreddit.com
     version [0.1.0]: 0.0.1
     timezone [UTC]:
-    now [2016/03/01]: 2016/03/05
-    year [2015]:
     windows [n]: n
     use_python2 [n]: y
     use_gulp [n]: n
