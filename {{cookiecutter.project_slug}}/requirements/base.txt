@@ -11,7 +11,6 @@ django==1.9.8
 
 # Configuration
 django-environ==0.4.0
-django-secure==1.0.1
 
 {% if cookiecutter.windows == 'y' -%}
 # On Windows, you must download/install psycopg2 manually
