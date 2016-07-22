@@ -9,7 +9,7 @@ Cookiecutter Django Gulp
      :target: https://travis-ci.org/valerymelou/cookiecutter-django-gulp
      :alt: Build Status
 
-A Cookiecutter_ template for Django.
+Powered by Cookiecutter_, Cookiecutter Django Gulp is a framework for integrating Gulp_ in Django Projects quickly.
 
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
 
