@@ -24,8 +24,8 @@ Features
 * Optimized development and production settings
 * Sass compilation plus CSS, JavaScript and image optimization with Gulp_
 * Dependencies management with Bower_
-* Works with Python 2.7.x or 3.5.x!
-* Run tests with unittest or py.test!
+* Works with Python 2.7.x or 3.5.x
+* Run tests with unittest or py.test
 
 .. _Bootstrap: https://github.com/twbs/bootstrap
 .. _alpha: http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/
