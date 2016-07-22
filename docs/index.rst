@@ -21,6 +21,7 @@ Contents:
    settings
    gulp-tasks
    faq
+   troubleshooting
 
 
 
