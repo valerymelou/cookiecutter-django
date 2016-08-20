@@ -4,7 +4,7 @@
 coverage==4.2
 Sphinx==1.4.5
 django-extensions==1.7.2
-django-test-plus==1.0.14
+django-test-plus==1.0.15
 factory_boy==2.7.0
 
 # pytest!
