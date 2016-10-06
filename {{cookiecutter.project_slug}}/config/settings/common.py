@@ -179,7 +179,7 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     str(APPS_DIR.path('static')),  # Put your assets here
-    {% if cookiecutter.use_gulp == 'y' -%}str(ROOT_DIR('build')),  # Optimized assets are generated here{%- endif %})
+    str(ROOT_DIR('build')),  # Optimized assets are generated here
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
