@@ -11,7 +11,12 @@ Cookiecutter Django Gulp
 
 Powered by Cookiecutter_, Cookiecutter Django Gulp is a framework for integrating Gulp_ in Django Projects quickly.
 
+* Documentation: https://cookiecutter-django-gulp.readthedocs.io/en/latest/
+* See Troubleshooting_ for common errors and obstacles
+
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
+
+.. _Troubleshooting: https://cookiecutter-django-gulp.readthedocs.io/en/latest/troubleshooting.html
 
 Features
 --------
