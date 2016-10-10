@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import os
-import platform
 import sys
 
 try:
@@ -14,8 +13,8 @@ except ImportError:
 version = "1.9.5"
 
 if sys.argv[-1] == 'tag':
-    os.system("git tag -a %s -m 'version %s'" % (version, version))
-    os.system("git push --tags")
+    os.system('git tag -a %s -m "version %s"' % (version, version))
+    os.system('git push --tags')
     sys.exit()
 
 with open('README.rst') as readme_file:
