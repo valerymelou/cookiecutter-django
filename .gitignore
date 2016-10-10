@@ -25,6 +25,7 @@ sftp-config.json
 *.pyc
 .idea
 _build
+*.egg-info/
 
 # Project Specific Stuff
 local_settings.py
@@ -33,9 +34,6 @@ my_test_project/*
 
 # Generated when running py.test for the cookiecutter-django-gulp generation tests
 .cache/
-
-# Generated when running celery beat
-celerybeat-schedule.db
 
 # Unit test / coverage reports
 .coverage
