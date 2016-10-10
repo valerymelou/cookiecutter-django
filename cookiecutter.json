@@ -8,6 +8,6 @@
     "version": "0.1.0",
     "timezone": "UTC",
     "windows": "n",
-    "use_python2": "n",
+    "use_python3": "y",
     "open_source_license": ["MIT", "BSD", "Not open source"]
 }
