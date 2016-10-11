@@ -1,8 +1,8 @@
 Project Generation Options
 ==========================
 
-project_name [project_name]:
-    Your human-readable project name, including any capitalization or spaces.
+project_name [Project Name]:
+    Your Human Readable project name, including any capitalization or spaces.
 
 project_slug [project_slug]:
     The slug of your project, without dashes or spaces. Used to name your repo
