@@ -59,7 +59,6 @@ node_modules/
 # Static files
 {{ cookiecutter.project_slug }}/static/libs/
 staticfiles/
-build/
 
 # User-uploaded media
 {{ cookiecutter.project_slug }}/media/

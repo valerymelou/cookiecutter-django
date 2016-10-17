@@ -12,12 +12,12 @@ var notifier = require('node-notifier');
 
 // Configuration used within this gulpfile
 var app = '{{ cookiecutter.project_slug }}';
-var dist = 'build';
 var config = {
     css: app + '/static/css/**/*.css',
     scss: app + '/static/scss/**/*.scss',
     js: app + '/static/js/**/*.js',
     images: app + '/static/images/**/*',
+    dist: app + '/static/dist',
     html: app + '/templates/**/*.html'
 };
 
@@ -73,7 +73,7 @@ gulp.task('styles', function() {
         .pipe($.csso())
         .pipe($.rename({suffix: '.min'}))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(dist + '/css'))
+        .pipe(gulp.dest(config.dist + '/css'))
         .pipe($.size({title: 'styles'}));
 });
 
@@ -86,7 +86,7 @@ gulp.task('scripts', function() {
         .pipe($.uglify()).on('error', logUglifyError)
         .pipe($.rename({suffix: '.min'}))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(dist + '/js'))
+        .pipe(gulp.dest(config.dist + '/js'))
         .pipe($.size({title: 'scripts'}));
 });
 
@@ -103,7 +103,7 @@ gulp.task('jshint', function() {
 gulp.task('images', function() {
     return gulp.src(config.images)
         .pipe($.cache($.imagemin({progressive: true, interlaced: true})))
-        .pipe(gulp.dest(dist + '/images'))
+        .pipe(gulp.dest(config.dist + '/images'))
         .pipe($.size({title: 'images'}));
 });
 
@@ -117,9 +117,9 @@ gulp.task('clear-cache', function() {
 
 // Delete all generated files
 gulp.task('clean', del.bind(null, [
-    dist + '/css',
-    dist + '/js',
-    dist + '/images',
+    config.dist + '/css',
+    config.dist + '/js',
+    config.dist + '/images',
 ]));
 
 
