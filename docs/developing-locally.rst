@@ -66,7 +66,8 @@ all enabled.
 
 .. _nodejs: http://nodejs.org/download/
 
-Optimized files are saved in the build folder at the root of the generated project which is included in your Django STATICFILES_DIRS.
+Optimized static files are generated in a ``dist`` folder in your static files folder. To serve them in your project, you can add something like this in your HTML:
+``<link href="{% static 'dist/css/styles.min.css' %}" rel="stylesheet">``.
 
 To read about all included gulp tasks see :ref:`gulp-tasks`.
 
