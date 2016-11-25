@@ -10,7 +10,7 @@ wheel==0.29.0
 django==1.10.3
 
 # Configuration
-django-environ==0.4.0
+django-environ==0.4.1
 
 {% if cookiecutter.windows == 'y' -%}
 # On Windows, you must download/install psycopg2 manually
