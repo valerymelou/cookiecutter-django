@@ -10,7 +10,7 @@ except ImportError:
 
 # Our version ALWAYS matches the version of Django we support
 # If Django has a new release, we branch, tag, then update this setting after the tag.
-version = "1.9.5"
+version = '1.10.1'
 
 if sys.argv[-1] == 'tag':
     os.system('git tag -a %s -m "version %s"' % (version, version))
@@ -29,7 +29,7 @@ setup(
     author_email='valerymelou@gmail.com',
     url='https://github.com/valerymelou/cookiecutter-django-gulp',
     packages=[],
-    license='MIT',
+    license='BSD',
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -37,7 +37,7 @@ setup(
         'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
         'Natural Language :: English',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',

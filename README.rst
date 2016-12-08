@@ -21,7 +21,7 @@ Powered by Cookiecutter_, Cookiecutter Django Gulp is a framework for integratin
 Features
 --------
 
-* For Django 1.9
+* For Django 1.10
 * Renders Django projects with 100% starting test coverage
 * Twitter Bootstrap_ v4.0.0 - alpha_
 * 12-Factor_ based settings via django-environ_
