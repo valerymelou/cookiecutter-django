@@ -33,3 +33,17 @@ windows [n]
 use_python3 [y]
     By default, the Python code generated will be for Python 3.x. But if you
     answer `n` here, it will be legacy Python 2.7 code.
+
+open_source_license [1]
+    Select a software license for the project. The choices are:
+
+    1. MIT_
+    2. BSD_
+    3. GPLv3_
+    4. `Apache Software License 2.0`_
+    5. Not open source
+
+.. _MIT: https://opensource.org/licenses/MIT
+.. _BSD: https://opensource.org/licenses/BSD-3-Clause
+.. _GPLv3: https://www.gnu.org/licenses/gpl.html
+.. _Apache Software License 2.0: http://www.apache.org/licenses/LICENSE-2.0
