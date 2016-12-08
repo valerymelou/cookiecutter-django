@@ -28,12 +28,13 @@ var pathsConfig = function (appName) {
 
   return {
     app: this.app,
-    templates: this.app + '/templates',
-    css: this.app + '/static/css',
-    sass: this.app + '/static/sass',
+    templates: this.app + '/templates/**/*.html',
+    css: this.app + '/static/css/**/*.css',
+    sass: this.app + '/static/sass/**/*.scss',
     fonts: this.app + '/static/fonts',
-    images: this.app + '/static/images',
-    js: this.app + '/static/js',
+    images: this.app + '/static/images/**/*',
+    js: this.app + '/static/js/**/*.js',
+    dist: this.app + '/static',
   }
 };
 
@@ -45,31 +46,31 @@ var paths = pathsConfig();
 
 // Styles autoprefixing and minification
 gulp.task('styles', function() {
-  return gulp.src(paths.sass + '/project.scss')
+  return gulp.src(paths.sass)
     .pipe(sass().on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
     .pipe(autoprefixer({browsers: ['last 2 version']})) // Adds vendor prefixes
     .pipe(pixrem())  // add fallbacks for rem units
-    .pipe(gulp.dest(paths.css))
+    .pipe(gulp.dest(paths.dist + '/css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano()) // Minifies the result
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest(paths.dist + '/css'));
 });
 
 // Javascript minification
 gulp.task('scripts', function() {
-  return gulp.src(paths.js + '/project.js')
+  return gulp.src(paths.js)
     .pipe(plumber()) // Checks for errors
     .pipe(uglify()) // Minifies the js
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.js));
+    .pipe(gulp.dest(paths.dist + '/js'));
 });
 
 // Image compression
 gulp.task('imgCompression', function(){
-  return gulp.src(paths.images + '/*')
+  return gulp.src(paths.images)
     .pipe(imagemin()) // Compresses PNG, JPEG, GIF and SVG images
-    .pipe(gulp.dest(paths.images))
+    .pipe(gulp.dest(paths.dist + '/images'))
 });
 
 // Run django server
@@ -83,7 +84,7 @@ gulp.task('runServer', function() {
 // Browser sync server for live reload
 gulp.task('browserSync', function() {
     browserSync.init(
-      [paths.css + "/*.css", paths.js + "*.js", paths.templates + '*.html'], {
+      [paths.css, paths.js, paths.templates], {
         proxy:  "localhost:8000"
     });
 });
@@ -100,9 +101,9 @@ gulp.task('default', function() {
 // Watch
 gulp.task('watch', ['default'], function() {
 
-  gulp.watch(paths.sass + '/*.scss', ['styles']);
-  gulp.watch(paths.js + '/*.js', ['scripts']).on("change", reload);
-  gulp.watch(paths.images + '/*', ['imgCompression']);
-  gulp.watch(paths.templates + '/**/*.html').on("change", reload);
+  gulp.watch(paths.sass, ['styles']);
+  gulp.watch(paths.js, ['scripts']).on("change", reload);
+  gulp.watch(paths.images, ['imgCompression']);
+  gulp.watch(paths.templates).on("change", reload);
 
 });
