@@ -1,3 +1,0 @@
-{
-  "directory": "{{ cookiecutter.project_slug }}/static/libs"
-}
