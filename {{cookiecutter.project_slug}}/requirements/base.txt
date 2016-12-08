@@ -12,6 +12,12 @@ django==1.10.4
 # Configuration
 django-environ==0.4.1
 
+# Models
+django-model-utils==2.6
+
+# Images
+Pillow==3.4.2
+
 {% if cookiecutter.windows == 'y' -%}
 # On Windows, you must download/install psycopg2 manually
 # from http://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg
@@ -22,5 +28,9 @@ psycopg2==2.6.2
 
 # Time zones support
 pytz==2016.10
+
+# Redis support
+django-redis==4.6.0
+redis>=2.10.5
 
 # Your custom requirements go here
