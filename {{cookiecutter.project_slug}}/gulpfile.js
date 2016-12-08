@@ -1,148 +1,108 @@
-'use strict';
 
-// Include gulp and tools we'll use
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var del = require('del');
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var exec = require('child_process').exec;
-var notifier = require('node-notifier');
+////////////////////////////////
+		//Setup//
+////////////////////////////////
 
-// Configuration used within this gulpfile
-var app = '{{ cookiecutter.project_slug }}';
-var config = {
-    css: app + '/static/css/**/*.css',
-    scss: app + '/static/scss/**/*.scss',
-    js: app + '/static/js/**/*.js',
-    images: app + '/static/images/**/*',
-    dist: app + '/static/dist',
-    html: app + '/templates/**/*.html'
+// Plugins
+var gulp = require('gulp'),
+      pjson = require('./package.json'),
+      gutil = require('gulp-util'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cssnano = require('gulp-cssnano'),
+      rename = require('gulp-rename'),
+      del = require('del'),
+      plumber = require('gulp-plumber'),
+      pixrem = require('gulp-pixrem'),
+      uglify = require('gulp-uglify'),
+      imagemin = require('gulp-imagemin'),
+      exec = require('child_process').exec,
+      runSequence = require('run-sequence'),
+      browserSync = require('browser-sync').create(),
+      reload = browserSync.reload;
+
+
+// Relative paths function
+var pathsConfig = function (appName) {
+  this.app = "./" + (appName || pjson.name);
+
+  return {
+    app: this.app,
+    templates: this.app + '/templates',
+    css: this.app + '/static/css',
+    sass: this.app + '/static/sass',
+    fonts: this.app + '/static/fonts',
+    images: this.app + '/static/images',
+    js: this.app + '/static/js',
+  }
 };
 
-// Autoprefixers
-var AUTOPREFIXER_BROWSERS = [
-  'ie >= 10',
-  'ie_mob >= 10',
-  'ff >= 30',
-  'chrome >= 34',
-  'safari >= 7',
-  'opera >= 23',
-  'ios >= 7',
-  'android >= 4.4',
-  'bb >= 10'
-];
+var paths = pathsConfig();
 
-function getRelativePath(absPath) {
-    absPath = absPath.replace(/\\/g, '/');
-    var curDir = __dirname.replace(/\\/g, '/');
-    return absPath.replace(curDir, '');
-}
+////////////////////////////////
+		//Tasks//
+////////////////////////////////
 
-function logUglifyError(error) {
-    this.emit('end');
-    var file = getRelativePath(error.fileName);
-    $.util.log($.util.colors.bgRed('Uglify Error:'))
-    $.util.log($.util.colors.bgMagenta('file: ') + $.util.colors.inverse(file));
-    $.util.log($.util.colors.bgMagenta('line: '+error.lineNumber));
-    //remove path from error message
-    var message = error.message.substr(error.message.indexOf(' ')+1);
-    $.util.log($.util.colors.bgRed(message));
-    notifier.notify({ title: 'Gulp message', message: 'Uglify error!' });
-}
-
-
-function logSASSError(error) {
-    var file = getRelativePath(error.file);
-    $.util.log($.util.colors.bgRed('Sass Error:'))
-    $.util.log($.util.colors.bgMagenta('file: ') + $.util.colors.inverse(file));
-    $.util.log($.util.colors.bgMagenta('line: '+error.line+', column: '+error.column));
-    $.util.log($.util.colors.bgRed(error.message));
-    notifier.notify({ title: 'Gulp message', message: 'SASS Error!' });
-}
-
-
-// Compile, concat, minify and automatically prefix stylesheets
+// Styles autoprefixing and minification
 gulp.task('styles', function() {
-    return gulp.src([config.css, config.scss])
-        .pipe($.sourcemaps.init())
-        .pipe($.sass().on('error', logSASSError))
-        .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-        .pipe($.concat('styles.css'))
-        .pipe($.csso())
-        .pipe($.rename({suffix: '.min'}))
-        .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(config.dist + '/css'))
-        .pipe($.size({title: 'styles'}));
+  return gulp.src(paths.sass + '/project.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(plumber()) // Checks for errors
+    .pipe(autoprefixer({browsers: ['last 2 version']})) // Adds vendor prefixes
+    .pipe(pixrem())  // add fallbacks for rem units
+    .pipe(gulp.dest(paths.css))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(cssnano()) // Minifies the result
+    .pipe(gulp.dest(paths.css));
 });
 
-
-// Concat and minify scripts
+// Javascript minification
 gulp.task('scripts', function() {
-    return gulp.src(config.js)
-        .pipe($.sourcemaps.init())
-        .pipe($.concat('scripts.js'))
-        .pipe($.uglify()).on('error', logUglifyError)
-        .pipe($.rename({suffix: '.min'}))
-        .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(config.dist + '/js'))
-        .pipe($.size({title: 'scripts'}));
+  return gulp.src(paths.js + '/project.js')
+    .pipe(plumber()) // Checks for errors
+    .pipe(uglify()) // Minifies the js
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.js));
 });
 
-
-// Lint JavaScript
-gulp.task('jshint', function() {
-    return gulp.src(config.js)
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'));
+// Image compression
+gulp.task('imgCompression', function(){
+  return gulp.src(paths.images + '/*')
+    .pipe(imagemin()) // Compresses PNG, JPEG, GIF and SVG images
+    .pipe(gulp.dest(paths.images))
 });
 
-
-// Optimize images
-gulp.task('images', function() {
-    return gulp.src(config.images)
-        .pipe($.cache($.imagemin({progressive: true, interlaced: true})))
-        .pipe(gulp.dest(config.dist + '/images'))
-        .pipe($.size({title: 'images'}));
+// Run django server
+gulp.task('runServer', function() {
+  exec('python manage.py runserver', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+  });
 });
 
-
-// Clear the cache
-gulp.task('clear-cache', function() {
-    // Clear all cached files
-    $.cache.clearAll();
-});
-
-
-// Delete all generated files
-gulp.task('clean', del.bind(null, [
-    config.dist + '/css',
-    config.dist + '/js',
-    config.dist + '/images',
-]));
-
-
-// Optimize files and save the output to the dist folder
-gulp.task('dist', ['clean'], function(cb) {
-    runSequence('styles', ['jshint', 'scripts', 'images'], cb);
-});
-
-
-// Run Django server
-gulp.task('runserver', function() {
-    var proc = exec('python manage.py runserver');
-});
-
-
-// Optimize files, watch for changes & reload, the default task
-gulp.task('default', ['dist', 'runserver'], function() {
-    browserSync({
-        notify: false,
-        proxy: 'localhost:8000'
+// Browser sync server for live reload
+gulp.task('browserSync', function() {
+    browserSync.init(
+      [paths.css + "/*.css", paths.js + "*.js", paths.templates + '*.html'], {
+        proxy:  "localhost:8000"
     });
-    gulp.watch([config.html], reload);
-    gulp.watch([config.css, config.scss], ['styles', reload]);
-    gulp.watch([config.js], ['scripts', reload]);
-    gulp.watch([config.images], ['images', reload]);
+});
+
+// Default task
+gulp.task('default', function() {
+    runSequence(['styles', 'scripts', 'imgCompression'], 'runServer', 'browserSync');
+});
+
+////////////////////////////////
+		//Watch//
+////////////////////////////////
+
+// Watch
+gulp.task('watch', ['default'], function() {
+
+  gulp.watch(paths.sass + '/*.scss', ['styles']);
+  gulp.watch(paths.js + '/*.js', ['scripts']).on("change", reload);
+  gulp.watch(paths.images + '/*', ['imgCompression']);
+  gulp.watch(paths.templates + '/**/*.html').on("change", reload);
+
 });

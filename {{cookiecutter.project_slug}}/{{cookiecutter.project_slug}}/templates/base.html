@@ -14,8 +14,10 @@
     <![endif]-->
 
     {% block css %}
-      <link href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-      <link href="{% static 'dist/css/styles.min.css' %}" rel="stylesheet">
+      <!-- Latest compiled and minified Bootstrap 4 Alpha 4 CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+      <!-- Project-specific css -->
+      <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
 
   </head>
@@ -27,10 +29,12 @@
     {% endblock content %}
 
     {% block javascript %}
-    <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'libs/tether/dist/js/tether.min.js' %}"></script>
-    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'dist/js/scripts.min.js' %}"></script>
+      <!-- Required by Bootstrap v4 Alpha 4 -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+      <!-- place project specific Javascript in this file -->
+      <script src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
   </body>
 </html>

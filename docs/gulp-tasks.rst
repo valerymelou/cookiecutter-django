@@ -5,39 +5,31 @@ Included gulp tasks
 
 The following gulp tasks are available from the default gulpfile:
 
-**Compile and optimize stylesheets**::
+**Styles autoprefixing and minification**::
 
     $ gulp styles
 
-**Concatenate and compress JavaScript**::
+**Javascript validation minification**::
 
     $ gulp scripts
 
-**Validate JavaScript**::
+**Image compression**::
 
-    $ gulp jshint
-
-**Optimize images**::
-
-    $ gulp images
+    $ gulp imgCompression
 
 
-**Clean the dist folder**::
+**Run Django server**::
 
-    $ gulp clean
+    $ gulp runServer
 
-**All the previous commands in one**::
+**Browser sync server for live reload**::
 
-    $ gulp dist
+    $ gulp browserSync
 
-**Run the Django development server**::
-
-    $ gulp runserver
-
-**The default task: Run the developement server, watch files for changes and reload the browser when they do**::
+**Default task**::
 
     $ gulp
 
-**Clear the cache used by gulp**::
+**Watch files for changes and reload the browser**:
 
-    $ gulp clear-cache
+    $ gulp watch
