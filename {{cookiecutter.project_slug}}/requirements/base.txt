@@ -7,10 +7,10 @@ wheel==0.29.0
 {%- endif %}
 
 # Bleeding edge Django
-django==1.10.2
+django==1.10.4
 
 # Configuration
-django-environ==0.4.0
+django-environ==0.4.1
 
 {% if cookiecutter.windows == 'y' -%}
 # On Windows, you must download/install psycopg2 manually
@@ -21,6 +21,6 @@ psycopg2==2.6.2
 {%- endif %}
 
 # Time zones support
-pytz==2016.7
+pytz==2016.10
 
 # Your custom requirements go here
