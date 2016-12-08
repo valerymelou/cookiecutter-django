@@ -23,7 +23,7 @@ with open('README.rst') as readme_file:
 setup(
     name='cookiecutter-django-gulp',
     version=version,
-    description='A Cookiecutter template for integrating frontend development tools in Django projects.',
+    description='A Cookiecutter template for integrating Gulp in Django projects.',
     long_description=long_description,
     author='Valery Melou',
     author_email='valerymelou@gmail.com',
@@ -50,7 +50,7 @@ setup(
     ],
     keywords=(
         'cookiecutter, Python, projects, project templates, django, '
-        'frontend, gulp, optimization, compass, sass, minification, skeleton, '
-        'scaffolding, project directory, setup.py'
+        'gulp, compass, sass, minification, skeleton, scaffolding, '
+        'project directory, setup.py'
     ),
 )
