@@ -51,8 +51,6 @@ Make sure that nodejs_ is installed. Then in the project root run::
 
     $ npm install
 
-This command will also run ``bower install`` to install static dependencies for you. Now you just need::
-
     $ gulp
 
 The base app will now run as it would with the usual ``manage.py runserver`` but with:
@@ -67,7 +65,7 @@ all enabled.
 .. _nodejs: http://nodejs.org/download/
 
 Optimized static files are generated in a ``dist`` folder in your static files folder. To serve them in your project, you can add something like this in your HTML:
-``<link href="{% static 'dist/css/styles.min.css' %}" rel="stylesheet">``.
+``<link href="{% static 'css/project.min.css' %}" rel="stylesheet">``.
 
 To read about all included gulp tasks see :ref:`gulp-tasks`.
 
