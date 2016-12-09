@@ -20,7 +20,7 @@ env.read_env()
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
-DJANGO_APPS = (
+DJANGO_APPS = [
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,29 +33,29 @@ DJANGO_APPS = (
     # 'django.contrib.humanize',
 
     # Admin
-    'django.contrib.admin',
-)
-THIRD_PARTY_APPS = ()
+    'django.contrib.admin'
+]
+THIRD_PARTY_APPS = []
 
 # Apps specific for this project go here.
-LOCAL_APPS = (
+LOCAL_APPS = [
     # Your stuff: custom apps go here
-)
+]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE = (
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+]
 
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -71,9 +71,9 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
-FIXTURE_DIRS = (
-    str(APPS_DIR.path('fixtures')),
-)
+FIXTURE_DIRS = [
+    str(APPS_DIR.path('fixtures'))
+]
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -82,9 +82,9 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = (
-    ("""{{cookiecutter.author_name}}""", '{{cookiecutter.email}}'),
-)
+ADMINS = [
+    ("""{{cookiecutter.author_name}}""", '{{cookiecutter.email}}')
+]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
@@ -152,9 +152,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
-            ],
-        },
-    },
+            ]
+        }
+    }
 ]
 
 # STATIC FILE CONFIGURATION
@@ -166,15 +166,15 @@ STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    str(APPS_DIR.path('static')),
-)
+STATICFILES_DIRS = [
+    str(APPS_DIR.path('static'))
+]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+]
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
