@@ -13,7 +13,7 @@ django==1.11
 django-environ==0.4.2
 
 # Models
-django-model-utils==2.6.1
+django-model-utils==3.0.0
 
 # Images
 Pillow==4.1.0
