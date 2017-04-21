@@ -10,7 +10,7 @@ wheel==0.29.0
 django==1.11
 
 # Configuration
-django-environ==0.4.2
+django-environ==0.4.3
 
 # Models
 django-model-utils==3.0.0
