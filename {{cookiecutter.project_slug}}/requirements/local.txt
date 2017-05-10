@@ -1,7 +1,7 @@
 # Local development dependencies go here
 -r base.txt
 
-coverage==4.3.4
+coverage==4.4
 Sphinx==1.5.5
 django-extensions==1.7.9
 django-test-plus==1.0.17
