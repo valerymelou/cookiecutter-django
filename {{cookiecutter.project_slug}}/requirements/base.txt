@@ -16,7 +16,7 @@ django-environ==0.4.3
 django-model-utils==3.0.0
 
 # Images
-Pillow==4.1.1
+Pillow==4.2.0
 
 {% if cookiecutter.windows == 'y' -%}
 # On Windows, you must download/install psycopg2 manually
