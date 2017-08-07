@@ -5,7 +5,7 @@ Sphinx==1.6.3
 coverage==4.4.1
 django-extensions==1.8.1
 django-test-plus==1.0.18
-factory-boy==2.8.1
+factory-boy==2.9.2
 
 django-debug-toolbar==1.8
 
