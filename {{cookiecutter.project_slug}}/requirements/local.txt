@@ -7,7 +7,7 @@ django-extensions==1.9.7
 django-test-plus==1.0.19
 factory-boy==2.9.2
 
-django-debug-toolbar==1.8
+django-debug-toolbar==1.9.1
 
 # pytest!
 pytest-django==3.1.2
