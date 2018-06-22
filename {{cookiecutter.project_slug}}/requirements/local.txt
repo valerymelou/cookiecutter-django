@@ -10,5 +10,5 @@ factory-boy==2.11.1
 django-debug-toolbar==1.9.1
 
 # pytest!
-pytest-django==3.3.0
+pytest-django==3.3.2
 pytest-sugar==0.9.1
