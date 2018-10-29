@@ -27,7 +27,7 @@ psycopg2==2.7.5
 {%- endif %}
 
 # Time zones support
-pytz==2018.5
+pytz==2018.7
 
 # Redis support
 django-redis==4.9.0
