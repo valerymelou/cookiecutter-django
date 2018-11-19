@@ -30,7 +30,7 @@ psycopg2==2.7.6.1
 pytz==2018.7
 
 # Redis support
-django-redis==4.9.0
+django-redis==4.10.0
 redis>=2.10.5
 
 # Your custom requirements go here
