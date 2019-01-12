@@ -4,7 +4,7 @@ sh==1.12.14
 binaryornot==0.4.4
 
 # Testing
-pytest==4.0.2
+pytest==4.1.1
 pep8==1.7.1
 pyflakes==2.0.0
 tox==3.6.1
