@@ -23,7 +23,7 @@ Pillow==5.4.1
 # from http://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg
 {% else %}
 # Python-PostgreSQL Database Adapter
-psycopg2==2.7.6.1
+psycopg2==2.7.7
 {%- endif %}
 
 # Time zones support
