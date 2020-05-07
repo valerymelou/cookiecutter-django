@@ -2,7 +2,7 @@
 -r base.txt
 
 Sphinx==1.8.4
-coverage==4.5.2
+coverage==5.1
 django-extensions==2.1.5
 django-test-plus==1.1.1
 factory-boy==2.11.1
