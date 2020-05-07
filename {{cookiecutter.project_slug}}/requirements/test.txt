@@ -8,8 +8,8 @@ psycopg2==2.7.7
 {%- endif %}
 
 flake8==3.7.5
+django-test-plus==1.4.0
 coverage==5.1
-django-test-plus==1.1.1
 factory-boy==2.11.1
 
 # pytest!
