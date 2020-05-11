@@ -6,7 +6,7 @@
 # Python-PostgreSQL Database Adapter
 # If using Win for dev, this assumes Unix in prod
 # ------------------------------------------------
-psycopg2==2.7.7
+psycopg2==2.8.5
 {%- endif %}
 
 # WSGI Handler
